@@ -1,5 +1,5 @@
 [package]
-authors = ["coppercu <coppercu@qq.com>"]
+authors = ["cuprum63 <coppercu@foxmail.com>"]
 edition = "2018"
 readme = "README.md"
 name = "stm32f401ccu6"

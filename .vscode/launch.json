@@ -6,22 +6,23 @@
      */
     "version": "0.2.0",
     "configurations": [
+
+        // {
+        //     "type": "cortex-debug",
+        //     "request": "launch",
+        //     "name": "Debug (QEMU)",
+        //     "servertype": "qemu",
+        //     "cwd": "${workspaceRoot}",
+        //     "preLaunchTask": "Cargo Build (debug)",
+        //     "runToEntryPoint": "main",
+        //     "executable": "./target/thumbv7m-none-eabi/debug/stm32f401ccu6",
+        //     /* Run `cargo build --example hello` and uncomment this line to run semi-hosting example */
+        //     //"executable": "./target/thumbv7m-none-eabi/debug/examples/hello",
+        //     "cpu": "cortex-m3",
+        //     "machine": "lm3s6965evb",
+        // },
         {
-            "type": "cortex-debug",
-            "request": "launch",
-            "name": "Debug (QEMU)",
-            "servertype": "qemu",
-            "cwd": "${workspaceRoot}",
-            "preLaunchTask": "Cargo Build (debug)",
-            "runToEntryPoint": "main",
-            "executable": "./target/thumbv7m-none-eabi/debug/stm32f401ccu6",
-            /* Run `cargo build --example hello` and uncomment this line to run semi-hosting example */
-            //"executable": "./target/thumbv7m-none-eabi/debug/examples/hello",
-            "cpu": "cortex-m3",
-            "machine": "lm3s6965evb",
-        },
-        {
-            /* Configuration for the STM32F303 Discovery board */
+            /* Configuration for the STM32F401 board */
             "type": "cortex-debug",
             "request": "launch",
             "name": "Debug (OpenOCD)",
@@ -32,12 +33,14 @@
             "executable": "./target/thumbv7em-none-eabihf/debug/stm32f401ccu6",
             /* Run `cargo build --example itm` and uncomment this line to run itm example */
             // "executable": "./target/thumbv7em-none-eabihf/debug/examples/itm",
-            "device": "STM32F303VCT6",
+            // "executable": "./target/thumbv7em-none-eabihf/debug/examples/hello",
+            "device": "STM32F401CCU6",
             "configFiles": [
-                "interface/stlink-v2-1.cfg",
-                "target/stm32f3x.cfg"
+                //"interface/stlink-v2-1.cfg",
+                "interface/cmsis-dap.cfg",
+                "target/stm32f4x.cfg"
             ],
-            "svdFile": "${workspaceRoot}/.vscode/STM32F303.svd",
+            "svdFile": "${workspaceRoot}/.vscode/STM32F401.svd",
             "swoConfig": {
                 "enabled": true,
                 "cpuFrequency": 8000000,
